@@ -11,13 +11,16 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Build Debug APK with Gradle
+      - name: Find and Build Gradle Project
         run: |
-          cd QantaraVPN-AndroidStudio
-          ./gradlew assembleDebug --no-daemon --stacktrace
+          # البحث التلقائي عن مكان المجلد الفرعي وتطبيق البناء عليه
+          if [ -d "QantaraVPN-AndroidStudio" ]; then
+            cd QantaraVPN-AndroidStudio
+          fi
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
-      
-    path: QantaraVPN-AndroidStudio/app/build/outputs/apk/debug/app-debug.apk
+          path: '**/app/build/outputs/apk/debug/app-debug.apk'

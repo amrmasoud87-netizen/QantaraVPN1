@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Qantara VPN</string>
+    <string name="nav_home">Tunnel</string>
+    <string name="nav_servers">Servers</string>
+
+    <string name="status_connected">Connected · Encrypted</string>
+    <string name="status_connecting">Establishing Tunnel…</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_error">Connection Error</string>
+
+    <string name="action_connect">Connect</string>
+    <string name="action_disconnect">Disconnect</string>
+    <string name="active_server_label">Selected Gateway</string>
+    <string name="core_engine_label">Xray-core · Reality / gRPC / H2 / WS / UDP</string>
+
+    <string name="metric_ping">Ping</string>
+    <string name="metric_download">Download</string>
+    <string name="metric_upload">Upload</string>
+    <string name="metric_packet_loss">Packet Loss</string>
+
+    <string name="servers_title">Global Servers</string>
+    <string name="action_ping_all">Test Latency</string>
+    <string name="action_add_server">Import</string>
+
+    <string name="import_title">Import Configuration</string>
+    <string name="import_subtitle">Scan a QR code, paste a VLESS/VMess/Trojan/SS link, or load an Xray JSON file.</string>
+    <string name="import_qr">Scan QR Code</string>
+    <string name="import_json">Load JSON File</string>
+    <string name="import_link_hint">vless:// or vmess:// or trojan:// or ss://</string>
+    <string name="import_save">Add Server</string>
+    <string name="import_empty_error">Please enter or select a configuration first</string>
+    <string name="import_success">Added %1$s</string>
+    <string name="import_failed">Invalid configuration format</string>
+    <string name="camera_permission_required">Camera permission is required to scan QR codes</string>
+    <string name="scanner_hint">Align the Xray / V2Ray QR code inside the frame</string>
+
+    <string name="notification_channel_name">VPN Tunnel Status</string>
+    <string name="notification_channel_desc">Shows active Xray-core VPN connection and live speeds</string>
+</resources>

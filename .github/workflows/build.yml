@@ -1,22 +1,22 @@
-name: Build APK
+name: Build Android APK
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up JDK 17
+      - uses: actions/checkout@v4
+      - name: set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Grant execute permission for gradlew
-        run: chmod +x QantaraVPN-AndroidStudio/gradlew
-      - name: Build Debug APK
-        run: ./QantaraVPN-AndroidStudio/gradlew -p QantaraVPN-AndroidStudio assembleDebug --no-daemon
+      - name: Build with Gradle
+        run: |
+          cd QantaraVPN-AndroidStudio
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug-apk
+          name: apk
           path: QantaraVPN-AndroidStudio/app/build/outputs/apk/debug/app-debug.apk

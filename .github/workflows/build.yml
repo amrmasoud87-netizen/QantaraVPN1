@@ -11,11 +11,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Build with Gradle
-        run: |
-          cd QantaraVPN-AndroidStudio
-          chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+      - name: Grant execute permission for gradlew
+        run: chmod +x QantaraVPN-AndroidStudio/gradlew
+      - name: Build Debug APK
+        run: ./QantaraVPN-AndroidStudio/gradlew -p QantaraVPN-AndroidStudio assembleDebug --no-daemon
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
